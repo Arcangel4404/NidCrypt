@@ -32,7 +32,7 @@ public class InputForMap {
                     System.out.print("Enter movement directions (w/a/s/d): ");
                     String key = scanner.nextLine();
                     String encrypted = encryptClass.encryptString(input, key);
-                    System.out.println("Encrypted String: " + encrypted);
+                    System.out.println("Encryptesd String: " + encrypted);
                     System.out.println("Save this key for decryption: " + key);
                     break;
 

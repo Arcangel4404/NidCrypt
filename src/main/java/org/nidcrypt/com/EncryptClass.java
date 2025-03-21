@@ -18,10 +18,18 @@ public class EncryptClass {
 
                 for (char direction : directions.toCharArray()) {
                     switch (direction) {
-                        case 'w': if (currentRow > 0) currentRow--; break;
-                        case 's': if (currentRow < mainMap.getGridHeight() - 1) currentRow++; break;
-                        case 'a': if (currentCol > 0) currentCol--; break;
-                        case 'd': if (currentCol < mainMap.getGridWidth() - 1) currentCol++; break;
+                        case 'w': 
+                            currentRow = (currentRow == 0) ? mainMap.getGridHeight() - 1 : currentRow - 1;
+                            break;
+                        case 's': 
+                            currentRow = (currentRow == mainMap.getGridHeight() - 1) ? 0 : currentRow + 1;
+                            break;
+                        case 'a': 
+                            currentCol = (currentCol == 0) ? mainMap.getGridWidth() - 1 : currentCol - 1;
+                            break;
+                        case 'd': 
+                            currentCol = (currentCol == mainMap.getGridWidth() - 1) ? 0 : currentCol + 1;
+                            break;
                     }
                 }
                 result.append(mainMap.getLetter(currentRow, currentCol));
